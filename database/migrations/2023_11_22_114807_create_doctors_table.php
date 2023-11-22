@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('consultorio');
             $table->string('img_source');
             $table->unsignedBigInteger('usuario_id');
-            $table->foreign('usuario_id')->references('username')->on('users');
+            $table->foreign('usuario_id')->references('dni')->on('users');
             $table->unsignedBigInteger('especialidad_id');
             $table->foreign('especialidad_id')->references('id')->on('specialties');
             $table->timestamps();
