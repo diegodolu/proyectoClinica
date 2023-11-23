@@ -25,9 +25,9 @@ Route::get('/register', [RegisterController::class, 'show'])->name('reg');
 
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
-Route::get('/login', [LoginController::class, 'show']);
+Route::get('/login', [LoginController::class, 'show'])->name('loginShow');
 
-Route::post('/login', [LoginController::class, 'register']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/home', [HomeController::class, 'index']);
 

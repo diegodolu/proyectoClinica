@@ -38,20 +38,20 @@
                             <div class="col-lg-10 col-xl-7 mx-auto">
                                 <h3 class="display-4">Iniciar sesion</h3>
                                 <p class="text-muted mb-4">Porfavor ingrese su DNI y contraseña</p>
-                                <form>
+                                <form action="/login" method="POST">
                                     @csrf
                                     <div class="form-group mb-3">
-                                        <input id="inputEmail" type="email" placeholder="DNI" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                        <input id="inputEmail" type="text" placeholder="DNI" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" name="dni">
                                     </div>
                                     <div class="form-group mb-3">
-                                        <input id="inputPassword" type="password" placeholder="Contraseña" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                        <input id="inputPassword" type="password" placeholder="Contraseña" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" name="password">
                                     </div>
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input id="customCheck1" type="checkbox" checked class="custom-control-input">
                                         <label for="customCheck1" class="custom-control-label">Recordar contraseña</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Iniciar sesion</button>
-                                    <div class="text-center d-flex justify-content-between mt-4"><p>¿No tiene una cuenta? <a href="register.html" class="font-italic text-muted"> 
+                                    <input type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" value="Iniciar Sesión">
+                                    <div class="text-center d-flex justify-content-between mt-4"><p>¿No tiene una cuenta? <a href=" {{ route('reg') }}" class="font-italic text-muted"> 
                                             <u>Registrate</u></a></p></div>
                                 </form>
                             </div>
