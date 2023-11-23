@@ -39,44 +39,37 @@
           <!-- Mitad derecha login -->
           <div class="col-md-6 bg-light">
             <div class="contenedor-100hv">
-              <form id="regForm" action="">
+              <form id="regForm" action="{{ route('register')}}" method="POST">
                 @csrf
                 <h1>Registro:</h1>
                 
                 <!-- One "tab" for each step in the form: -->
-                <div class="tab">
-                  <p class="subtitulo-registro">DNI:</p>
-                  <p><input class="input-register" placeholder="DNI" oninput="this.className = 'input-register'"></p>
+                <div >
+                  <p><input class="input-register" placeholder="DNI" name="dni"></p>
                 </div>
                 
-                <div class="tab">
-                  <p class="subtitulo-registro">Información Básica:</p class="subtitulo-registro">
-                  <p><input type="text" class="input-register" placeholder="Nombres" oninput="this.className = 'input-register'" name="nombres"></p>
-                  <p><input type="text" class="input-register" placeholder="Apellidos" oninput="this.className = 'input-register'" name="apellidos"></p>
-                  <p><input type="text" class="input-register" placeholder="Telefono" oninput="this.className = 'input-register'" name="telefono"></p>
-                  <p><input type="text" class="input-register" placeholder="Direccion" oninput="this.className = 'input-register'" name="direccion"></p>
-                  <p><input type="email" class="input-register" placeholder="Email" oninput="this.className = 'input-register'" name="email"></p>
-                  <p><input type="date" class="input-register" placeholder="Fecha de nacimiento" oninput="this.className = 'input-register'" name="fecha"></p>
-                  <p><input type="password" type="" class="input-register" placeholder="Contraseña" oninput="this.className = 'input-register'" name="password"></p>
+                <div >
+                  <p><input type="text" class="input-register" placeholder="Nombres" name="nombres"></p>
+                  <p><input type="text" class="input-register" placeholder="Apellidos" name="apellidos"></p>
+                  <p><input type="text" class="input-register" placeholder="Telefono" name="telefono"></p>
+                  <p><input type="text" class="input-register" placeholder="Direccion" name="direccion"></p>
+                  <p><input type="email" class="input-register" placeholder="Email" name="email"></p>
+                  <p><input type="date" class="input-register" placeholder="Fecha de nacimiento" name="fecha"></p>
+                  <p><input type="password" type="" class="input-register" placeholder="Contraseña" name="password"></p>
+                  <input type="hidden" value="1" name="rol">
                 </div>
                 
                 
                 <div style="overflow:auto;">
                   <div style="float:right;">
-                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
-                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+                    {{-- <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button> --}}
+                    <input type="submit" value="Enviar">
                   </div>
                 </div>
 
                 <div class="text-center d-flex justify-content-between mt-4"><p>¿No tiene una cuenta? <a href="register.html" class="font-italic text-muted"> 
                   <u>Registrate</u></a></p></div>
-                
-                <!-- Indicadores de pasos: -->
-                <div style="text-align:center;margin-top:40px;">
-                  <span class="step"></span>
-                  <span class="step"></span>
-                  <span class="step"></span>
-                </div>
+
                 
               </form>
             </div>
